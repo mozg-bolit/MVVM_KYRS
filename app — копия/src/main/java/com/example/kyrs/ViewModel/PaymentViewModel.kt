@@ -1,18 +1,20 @@
 package com.example.kyrs.ViewModel
 
-
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import com.example.kyrs.Model.MainDB
 import com.example.kyrs.Model.Payment
 import com.example.kyrs.Model.Worker
 
-class PaymentViewModel(): ViewModel() {
+class PaymentViewModel(application: Application): AndroidViewModel(application) {
+    private val repo: PaymentRepo
 
-    private val repo = PaymentRepo()/////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    init {
+        val db = MainDB.getDb(application)
+        repo = PaymentRepo(db.workerDao(), db.paymentDao())
+    }
 
-   //Получит всех работников
+    //Получит всех работников
     fun getAllWorkers() = repo.getAllWorkers()
 
     //Получутить выплаты для работника
