@@ -13,19 +13,19 @@
         android:theme="@style/Theme.Kyrs"
         tools:targetApi="31">
         <activity
-            android:name=".Model.RDEnter"
+            android:name=".View.RDEnter"
             android:exported="false" />
         <activity
-            android:name=".Model.RDCreate"
+            android:name=".View.RDCreate"
             android:exported="false" />
         <activity
-            android:name=".Model.RDForm"
+            android:name=".View.RDForm"
             android:exported="false" />
         <activity
-            android:name=".Model.RForm"
+            android:name=".View.RForm"
             android:exported="false" />
         <activity
-            android:name=".Model.MainActivity"
+            android:name=".View.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

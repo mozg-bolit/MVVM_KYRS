@@ -21,13 +21,24 @@ import androidx.room.PrimaryKey
 )
 data class Payment (
     @PrimaryKey(autoGenerate = true)
+
+    @ColumnInfo
     var id:Int? = null,
+
+    @ColumnInfo(name = "workerId")
     val workerId: Int,
+
+    @ColumnInfo(name = "employerId")
     val employerId: Int,
     ////
+    @ColumnInfo(name = "hoursWorked")
     val hoursWorked: Double? = null, // для почасового тарифа
+
+    @ColumnInfo(name = "piecesProduced")
     val piecesProduced: Int? = null, // для сдельного тарифа
-    val totalSalary: Double, // итоговая зарплата
+
+    @ColumnInfo(name = "totalPayment")
+    val totalPayment: Double, // итоговая зарплата
     ////
 
     @ColumnInfo(name = "sum")
