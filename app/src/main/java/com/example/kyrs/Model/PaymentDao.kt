@@ -7,14 +7,14 @@ import androidx.room.Query
 @Dao
 interface PaymentDao {
     @Insert
-    fun insert(payment: Payment)
+    suspend fun insert(payment: Payment)
 
     @Query("SELECT * FROM payments WHERE workerId =:workerId")
-    fun getAllPaymentByWorker(workerId:Int): List<Payment>
+    suspend fun getAllPaymentByWorker(workerId:Int): List<Payment>
 
     @Query("SELECT * FROM payments WHERE employerId =:employerId")
-    fun getPaymentByEmployer(employerId: Int): List<Payment>
+    suspend fun getPaymentByEmployer(employerId: Int): List<Payment>
 
     @Query("SELECT * FROM payments WHERE id =:paymentId")
-    fun getPaymentById(paymentId: Int): List<Payment>
+    suspend fun getPaymentById(paymentId: Int): List<Payment>
 }

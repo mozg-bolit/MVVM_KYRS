@@ -1,5 +1,6 @@
 package com.example.kyrs.ViewModel
 
+import com.example.kyrs.Model.Employer
 import com.example.kyrs.Model.EmployerDao
 import com.example.kyrs.Model.Payment
 import com.example.kyrs.Model.PaymentDao
@@ -10,18 +11,23 @@ class PaymentRepo(private val workerDao: WorkerDao,
                   private val employerDao: EmployerDao,
                   private val paymentDao: PaymentDao) {
     // Получить всех работников
-    fun getAllWorkers(){
+    suspend fun getAllWorkers(){
         employerDao.getAllEmloyers()
     }
 
     // Получить все выплаты для работника
-    fun getPaymentsByWorker(workerId:Int) = paymentDao.getAllPaymentByWorker(workerId)
+    suspend fun getPaymentsByWorker(workerId:Int) = paymentDao.getAllPaymentByWorker(workerId)
 
     //Добавить работника
-    fun insertWorker(worker: Worker) = workerDao.insert(worker)
+    suspend fun insertWorker(worker: Worker) = workerDao.insert(worker)
 
     //Добавить выплату
-    fun insertPaymant(payment: Payment) = paymentDao.insert(payment)
+    suspend fun insertPaymant(payment: Payment) = paymentDao.insert(payment)
 
 
+    //ДОбавить работадателя
+    suspend fun insertEmployer(employer: Employer) =employerDao.insert(employer)
+
+    suspend fun getEmployerByLastNameAndPassword(lastName: String, password: String) = employerDao.getEmployerByLastNameAndPassword(lastName, password)
 }
+

@@ -4,18 +4,23 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity (tableName = "workers")
-data class Worker (
+@Entity(tableName = "workers")
+data class Worker(
     @PrimaryKey(autoGenerate = true)
-    var id:Int? = null,
-
+    var id: Long = 0L,  // Изменено с String на Long
 
     @ColumnInfo(name = "lastname")
-    var W_lastName: String,
+    var lastname: String,
 
     @ColumnInfo(name = "name")
-    var W_Name:String,
+    var firstname: String,
 
     @ColumnInfo(name = "middlename")
-    var W_middleName:String,
+    var middlename: String,
+
+    @ColumnInfo(name = "password")
+    var password: String,
+
+    @ColumnInfo(name = "rate")
+    var rate: String
 )

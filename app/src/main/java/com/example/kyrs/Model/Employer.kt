@@ -1,20 +1,23 @@
 package com.example.kyrs.Model
 
-import androidx.room.PrimaryKey
-import androidx.room.Entity
 import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Entity(tableName = "emoloyers")
-data class Employer (
-    @PrimaryKey (autoGenerate = true)
-    var id:Int? = null,
+@Entity(tableName = "employers")
+data class Employer(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0L,
 
     @ColumnInfo(name = "lastname")
-    var E_lastName:String,
+    var lastName: String,
 
     @ColumnInfo(name = "name")
-    var E_Name:String,
+    var firstName: String,
 
     @ColumnInfo(name = "middlename")
-    var E_middleName:String,
+    var middleName: String,
+
+    @ColumnInfo(name = "password")
+    var password: String
 )

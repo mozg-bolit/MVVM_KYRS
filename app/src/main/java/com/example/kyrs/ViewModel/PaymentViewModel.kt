@@ -1,26 +1,36 @@
 package com.example.kyrs.ViewModel
 
-
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
-import com.example.kyrs.Model.MainDB
+import com.example.kyrs.Model.Employer
 import com.example.kyrs.Model.Payment
 import com.example.kyrs.Model.Worker
 
-class PaymentViewModel(): ViewModel() {
+class PaymentViewModel(private val repo: PaymentRepo): ViewModel() {
 
-    private val repo = PaymentRepo()/////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
    //Получит всех работников
-    fun getAllWorkers() = repo.getAllWorkers()
+ suspend fun getAllWorkers() = repo.getAllWorkers()
 
     //Получутить выплаты для работника
-    fun getPaymentByIDWorker(workerId:Int) = repo.getPaymentsByWorker(workerId)
+ suspend fun getPaymentByIDWorker(workerId:Int) = repo.getPaymentsByWorker(workerId)
 
     //Добавить работника
-    fun insertWorker(worker: Worker) = repo.insertWorker(worker)
+ suspend fun insertWorker(worker: Worker) = repo.insertWorker(worker)
 
     //Добавить выплату
-    fun insertPayment(payment: Payment) = repo.insertPaymant(payment)
+ suspend fun insertPayment(payment: Payment) = repo.insertPaymant(payment)
+
+    //Добавить работадателя
+ suspend fun insertEmployer(employer: Employer) = repo.insertEmployer(employer)
+
+
+    suspend fun validateUser(lastName: String, password: String): Boolean {
+        // Здесь должна быть логика для проверки пользователя в базе данных.
+        val employer = repo.getEmployerByLastNameAndPassword(lastName, password)
+        return employer != null // Возвращает true если пользователь найден
+    }
+
+
+
+
 }

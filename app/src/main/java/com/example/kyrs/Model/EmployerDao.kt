@@ -7,11 +7,14 @@ import androidx.room.Query
 @Dao
 interface EmployerDao {
     @Insert
-    fun insert(employer: Employer)
+    suspend fun insert(employer: Employer)
 
-    @Query("SELECT * FROM emoloyers")
-    fun getAllEmloyers(): List<Employer>
+    @Query("SELECT * FROM employers")
+    suspend fun getAllEmloyers(): List<Employer>
 
-    @Query("SELECT * FROM emoloyers WHERE id =:id")
-    fun getPaymentByEmployer(id:Int): List<Employer>
+    @Query("SELECT * FROM employers WHERE id =:id")
+    suspend fun getPaymentByEmployer(id:Int): List<Employer>
+
+    @Query("SELECT * FROM employers WHERE lastname = :lastName AND password = :password LIMIT 1")
+    suspend fun getEmployerByLastNameAndPassword(lastName: String, password: String): Employer?
 }

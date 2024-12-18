@@ -7,8 +7,10 @@ import androidx.room.Query
 @Dao
 interface WorkerDao {
     @Insert
-    fun insert(worker: Worker)
+    suspend fun insert(worker: Worker)
+
+
 
     @Query("SELECT *FROM workers")
-    fun getAllWorkers(): List<Worker>
+    suspend fun getAllWorkers(): List<Worker>
 }
