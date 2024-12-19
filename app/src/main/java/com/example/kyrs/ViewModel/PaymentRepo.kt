@@ -21,6 +21,8 @@ class PaymentRepo(private val workerDao: WorkerDao,
     //Добавить работника
     suspend fun insertWorker(worker: Worker) = workerDao.insert(worker)
 
+    suspend fun getWorkerByLastNameAndPassword(lastname: String, password: String) = workerDao.getWorkerByLastNameAndPassword(lastname, password)
+
     //Добавить выплату
     suspend fun insertPaymant(payment: Payment) = paymentDao.insert(payment)
 

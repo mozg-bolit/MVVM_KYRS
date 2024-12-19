@@ -22,5 +22,8 @@ data class Worker(
     var password: String,
 
     @ColumnInfo(name = "rate")
-    var rate: String
+    var rate: Float,
+
+    @ColumnInfo(name = "payment_type")
+    val payment_type:String
 )

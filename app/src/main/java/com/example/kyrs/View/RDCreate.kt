@@ -76,7 +76,7 @@ class RDCreate : AppCompatActivity() {
                 }
             }
         } else {
-            Toast.makeText(applicationContext, "Введите все данные", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Заполните все поля", Toast.LENGTH_SHORT).show()
         }
     }
 

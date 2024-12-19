@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateWorkers">
+    tools:context=".View.CreateWorkers">
 
     <TextView
         android:id="@+id/textView6"
@@ -25,19 +25,21 @@
         android:layout_marginTop="32dp"
         android:text="Добавить"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/editRateW" />
 
     <EditText
         android:id="@+id/editWLN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Фамилия"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -56,9 +58,11 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="219dp"
-        android:layout_height="52dp"
+        android:layout_width="210dp"
+        android:layout_height="51dp"
         android:layout_marginTop="16dp"
+        android:entries="@array/paymant_types"
+        android:prompt="@string/select_payment_type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editWP" />
@@ -85,7 +89,21 @@
         android:hint="Пароль"
         android:inputType="text"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editWMN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editWMN"
         app:layout_constraintTop_toBottomOf="@+id/editWMN" />
+
+    <EditText
+        android:id="@+id/editRateW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Размер оплаты"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

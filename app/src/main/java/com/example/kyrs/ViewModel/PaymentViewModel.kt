@@ -20,6 +20,9 @@ class PaymentViewModel(private val repo: PaymentRepo): ViewModel() {
     //Добавить выплату
  suspend fun insertPayment(payment: Payment) = repo.insertPaymant(payment)
 
+ suspend fun getWorkerByLastNameAndPassword(lastname: String, password: String) = repo.getWorkerByLastNameAndPassword(lastname, password)
+
+
     //Добавить работадателя
  suspend fun insertEmployer(employer: Employer) = repo.insertEmployer(employer)
 

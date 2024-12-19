@@ -19,12 +19,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editLoginIDR"
+        android:id="@+id/editLoginR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:ems="10"
-        android:hint="ID работника"
+        android:hint="Фамилия"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,5 +42,15 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editLoginIDR" />
+        app:layout_constraintTop_toBottomOf="@+id/editLoginR" />
+
+    <Button
+        android:id="@+id/EnterWB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="Вход"
+        app:layout_constraintEnd_toEndOf="@+id/editPassR"
+        app:layout_constraintStart_toStartOf="@+id/editPassR"
+        app:layout_constraintTop_toBottomOf="@+id/editPassR" />
 </androidx.constraintlayout.widget.ConstraintLayout>
