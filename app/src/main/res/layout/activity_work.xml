@@ -5,59 +5,71 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Work">
+    tools:context=".View.Work">
 
+    <!-- Заголовок "Моя страница" -->
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="289dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:text="Моя страница"
         android:textAlignment="center"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="43dp" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Фамилия:"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="201dp" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Имя:"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="248dp" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Отчество:"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="293dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Закрыть"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="544dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
 
+    <!-- Фамилия -->
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
+        android:id="@+id/lnV"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Тариф:"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="340dp" />
+        android:layout_marginTop="16dp"
+        android:paddingStart="25dp"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+    <!-- Имя -->
+    <TextView
+        android:id="@+id/fnV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:paddingStart="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnV"
+        android:layout_marginTop="16dp" />
+
+    <!-- Отчество -->
+    <TextView
+        android:id="@+id/mnV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:paddingStart="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fnV"
+        android:layout_marginTop="16dp" />
+
+    <!-- Тариф -->
+    <TextView
+        android:id="@+id/prV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:paddingStart="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/mnV"
+        android:layout_marginTop="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

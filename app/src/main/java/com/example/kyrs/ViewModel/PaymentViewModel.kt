@@ -9,7 +9,10 @@ class PaymentViewModel(private val repo: PaymentRepo): ViewModel() {
 
 
    //Получит всех работников
- suspend fun getAllWorkers() = repo.getAllWorkers()
+   suspend fun getAllWorkers(): List<Worker> {
+       return repo.getAllWorkers()
+   }
+
 
     //Получутить выплаты для работника
  suspend fun getPaymentByIDWorker(workerId:Int) = repo.getPaymentsByWorker(workerId)
@@ -29,11 +32,26 @@ class PaymentViewModel(private val repo: PaymentRepo): ViewModel() {
 
     suspend fun validateUser(lastName: String, password: String): Boolean {
         // Здесь должна быть логика для проверки пользователя в базе данных.
-        val employer = repo.getEmployerByLastNameAndPassword(lastName, password)
+        val employer = repo.getEmployerByLastNameAndPassword(lastName,password)
         return employer != null // Возвращает true если пользователь найден
     }
 
+    suspend fun validateWorker(lastname: String, password: String): Boolean{
+        val worker = repo.getWorkerByLastNameAndPassword(lastname, password)
+        return  worker != null
+    }
 
+    suspend fun deleteWorker(worker: Worker) {
+        repo.deleteWorker(worker)}
+
+    suspend fun updateWorker(updatedWorker: Worker) {
+        repo.updateWorker(updatedWorker)
+    }
+
+    // Получить работника по ID
+    suspend fun getWorkerById(workerId: Int): Worker? {
+        return repo.getWorkerById(workerId)
+    }
 
 
 }

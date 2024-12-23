@@ -13,7 +13,16 @@
         android:theme="@style/Theme.Kyrs"
         tools:targetApi="31">
         <activity
-            android:name=".Work"
+            android:name=".View.WorkersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.RDProfile"
+            android:exported="false" />
+        <activity
+            android:name=".View.EditWorkerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Work"
             android:exported="false" />
         <activity
             android:name=".View.CreateWorkers"

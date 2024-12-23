@@ -45,33 +45,36 @@ class RForm : AppCompatActivity() {
         paymentViewModel = ViewModelProvider(this, factory).get(PaymentViewModel::class.java)
 
         RDEnter_BT.setOnClickListener {
-            enter()
+            // Получение данных из полей ввода
+            val lastname = findViewById<EditText>(R.id.editLoginR).text.toString().trim()
+            val password = findViewById<EditText>(R.id.editPassR).text.toString().trim()
+
+            // Проверка, что все поля заполнены
+            if (lastname.isNotEmpty() && password.isNotEmpty()) {
+                // Передача данных через Intent
+                val intent = Intent(this, Work::class.java)
+                intent.putExtra("LASTNAME", lastname)
+                intent.putExtra("PASSWORD", password)
+
+                // Запуск активности Work
+                startActivity(intent)
+
+                // Проверка данных в базе данных
+                checkCredentials(lastname, password)
+            } else {
+                Toast.makeText(this, "Введите фамилию и пароль", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    private fun enter() {
-        val lastName = findViewById<EditText>(R.id.editLoginR).text.toString().trim()
-        val password = findViewById<EditText>(R.id.editPassR).text.toString().trim()
-
-        if (lastName.isNotEmpty() && password.isNotEmpty()) {
-            // Проверка данных в базе данных
-            checkCredentials(lastName, password)
-        } else {
-            Toast.makeText(this, "Введите все данные", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun checkCredentials(lastName: String, password: String) {
+    private fun checkCredentials(lastname: String, password: String) {
         // Запуск проверки в корутине для работы с базой данных
         CoroutineScope(Dispatchers.IO).launch {
-            val isValidUser = paymentViewModel.validateUser(lastName, password)
+            val isValidUser = paymentViewModel.validateWorker(lastname, password)
 
             withContext(Dispatchers.Main) {
                 if (isValidUser) {
-                    // Переход на другое активити при успешной проверке
-                    val intent = Intent(this@RForm, Work::class.java)
-                    startActivity(intent)
-                    finish() // Закрыть текущее активити
+                    Toast.makeText(this@RForm, "Данные верны", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this@RForm, "Неверные данные", Toast.LENGTH_SHORT).show()
                 }

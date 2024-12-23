@@ -29,7 +29,7 @@ class RDForm : AppCompatActivity() {
         }
 
         EnterRD.setOnClickListener{
-           val intent = Intent(this, RDEnter::class.java)
+           val intent = Intent(this@RDForm, RDEnter::class.java)
             startActivity(intent)
         }
     }

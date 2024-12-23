@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".View.EditWorkerActivity">
+
+    <!-- Заголовок -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Редактирование работника"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Фамилия -->
+    <EditText
+        android:id="@+id/editLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Фамилия"
+        android:inputType="text"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Имя -->
+    <EditText
+        android:id="@+id/editFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Имя"
+        android:inputType="text"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Отчество -->
+    <EditText
+        android:id="@+id/editMiddleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Отчество"
+        android:inputType="text"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Тариф -->
+    <EditText
+        android:id="@+id/editRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Тариф"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Тип оплаты -->
+    <EditText
+        android:id="@+id/editPaymentType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Тип оплаты"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Кнопка "Сохранить" -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сохранить"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>

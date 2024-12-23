@@ -69,9 +69,9 @@ class RDEnter : AppCompatActivity() {
                 if (isValidUser) {
 
                     // Переход на другое активити при успешной проверке
-                    val intent = Intent(this@RDEnter, CreateWorkers::class.java)
+                    val intent = Intent(this@RDEnter, RDProfile::class.java)
                     startActivity(intent)
-                    finish() // Закрыть текущее активити
+
                 } else {
                     Toast.makeText(this@RDEnter, "Неверные данные", Toast.LENGTH_SHORT).show()
                 }

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "workers")
 data class Worker(
     @PrimaryKey(autoGenerate = true)
-    var id: Long = 0L,  // Изменено с String на Long
+    var id: Int = 0,  // Изменено с String на Long
 
     @ColumnInfo(name = "lastname")
     var lastname: String,
@@ -26,4 +26,6 @@ data class Worker(
 
     @ColumnInfo(name = "payment_type")
     val payment_type:String
+
 )
+
